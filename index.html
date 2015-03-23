@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="BP Logger">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">    
+    <!--link rel="apple-touch-startup-image" href="img/fondo.jpg">
+        
+    <link rel="shortcut icon" sizes="32x32" href="img/favicon/img_1701_32.jpg">
+    <link rel="shortcut icon" sizes="196x196" href="img/favicon/img_1701_196.jpg">
+    <link rel="apple-touch-icon" href="img/favicon/img_1701_152.jpg"-->
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>BP Logger</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+      <link rel="stylesheet" href="/css/main.css">
+  </head>
+  
+  <body ng-app="bplogger" ng-controller="MainController">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">BP Logger</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#/newmeasurement">Nueva medida</a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Historico <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#/history/bp">Blood pressure</a></li>
+              <li><a href="#/history/bp7">Blood pressure 7 days</a></li>
+              <li><a href="#/history/hr">Pulse</a></li>
+              <li><a href="#/history/bpdist">Blood pressure distribution</a></li>              
+              <li><a href="#/history/sysdist">Sistolic distribution</a></li>                            
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="loader" ng-if="router.isNavigating">
+            <i class="fa fa-spinner fa-spin fa-2x"></i>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container main">
+      <div ng-view class="mainviewport"></div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/firebase/firebase.js"></script>
+    <script src="/bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>    
+    <script src="/bower_components/angular-google-chart/ng-google-chart.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/components/newmeasurement/newmeasurement.js"></script>
+    <script src="/components/history/history.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script-->
+  </body>
+
+</html>

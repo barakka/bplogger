@@ -1,0 +1,27 @@
+html{
+	height: 100%;
+}
+
+body{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+div.container.main{
+	flex:1 1 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.mainviewport{
+	flex:1 1 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.chartdiv{
+	flex:1 1 0;
+	display: flex;
+	flex-direction: column;
+}
